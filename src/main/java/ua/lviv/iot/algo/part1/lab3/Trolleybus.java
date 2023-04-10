@@ -1,6 +1,11 @@
-package ua.lviv.iot.algo.part1.lab2;
+package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,11 +23,11 @@ public class Trolleybus extends Transport {
     public static Trolleybus getInstance() {
         return defaultTrolleybus;
     }
+
     public double stop() {
         if (currentSpeed < maxSpeedOfTrolleybus) {
             return currentSpeed = 0;
-        }
-        else {
+        } else {
             System.out.println("Error");
         }
         return currentSpeed;
@@ -35,13 +40,13 @@ public class Trolleybus extends Transport {
     public double addPassenger() {
 
         for (int i = 0; i < 25; i++) {
-            passengers++;
+                passengers++;
         }
         for (int i = 0; i >= 25; i++) {
             System.out.println("  The trolley bus is crowded \n");
             break;
         }
-        return 0;
+        return passengers;
     }
 
     public double removePassenger() {
@@ -52,7 +57,10 @@ public class Trolleybus extends Transport {
         return passengers;
     }
 
-    Trolleybus(int id1, int routeNumber, int currentStop, double maxSpeedOfTrolleybus,int passengers, int currentSpeed, int id, double maxSpeed, String colour){
+    Trolleybus(final int id1,final int routeNumber, final int currentStop,
+               final double maxSpeedOfTrolleybus, final int passengers,
+               final int currentSpeed, final int id,
+               final double maxSpeed, final String colour) {
         super(id, maxSpeed, colour);
         this.id1 = id1;
         this.routeNumber = routeNumber;
@@ -64,7 +72,7 @@ public class Trolleybus extends Transport {
 
 
     @Override
-    int accelerate(int speed) {
+    int accelerate(final int speed) {
         return currentSpeed;
     }
 }
