@@ -12,6 +12,7 @@ class TrainTest {
     public void ShouldReturnSpeedOfTrain() {
         var train = new Train(5226, "Black Circle", 122, 1000, 623, "Red");
         assertTrue(train.accelerate(0) == 122);
+        assertFalse(train.accelerate(0) == 19);
     }
 
     @Test

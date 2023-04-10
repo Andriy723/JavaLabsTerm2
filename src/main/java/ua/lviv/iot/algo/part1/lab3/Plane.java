@@ -1,6 +1,10 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -12,7 +16,9 @@ public class Plane extends Transport {
     private double maxHeightOfFlight;
     private int speedOfPlane;
 
-    Plane(int numberOfPassengers, double maxHeightOfFlight, int speedOfPlane, int id, double maxSpeed, String colour) {
+    Plane(final int numberOfPassengers, final double maxHeightOfFlight,
+          final int speedOfPlane, final int id, final double maxSpeed,
+          final String colour) {
         super(id, maxSpeed, colour);
         this.numberOfPassengers = numberOfPassengers;
         this.maxHeightOfFlight = maxHeightOfFlight;
@@ -20,7 +26,7 @@ public class Plane extends Transport {
     }
 
     @Override
-    int accelerate(int speed) {
+    int accelerate(final int speed) {
         return speedOfPlane;
     }
 }

@@ -1,6 +1,8 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -10,16 +12,16 @@ import java.util.List;
 public class TransportManager {
     private List<Transport> transports = new LinkedList<>();
 
-    public void addTransport(Transport transport) {
+    public void addTransport(final Transport transport) {
         this.transports.add(transport);
     }
 
-    public List<Transport> findTransportWithSpeedBiggerThan(int current) {
+    public List<Transport> findTransportWithSpeedBiggerThan(final int current) {
         return transports.stream()
                 .filter(transport -> transport.getMaxSpeed() > current).toList();
     }
 
-    public List<Transport> findTransportWithColour(String colour) {
+    public List<Transport> findTransportWithColour(final String colour) {
         return transports.stream()
                 .filter(transport -> transport.getColour() == colour).toList();
     }

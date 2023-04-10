@@ -1,6 +1,10 @@
 package ua.lviv.iot.algo.part1.lab3;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
@@ -12,5 +16,5 @@ public abstract class Transport {
     private double maxSpeed;
     private String colour;
 
-    abstract int accelerate(int speed);
+    abstract int accelerate(final int speed);
 }
