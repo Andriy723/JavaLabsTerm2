@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +16,20 @@ public class Train extends Transport {
     private String name;
     private int speedOfTrain;
 
-    Train(final double MaxLoadOnTrain, final String name,
-          final int speedOfTrain, final int id, final double maxSpeed,
+    public String getHeaders() {
+        return super.getHeaders() + ",\t" + "maxLoadOnTrain"
+                + ",\t" + "name" + ",\t" + "speedOfTrain";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ",\t" + maxLoadOnTrain
+                + ",\t" + name + ",\t" + speedOfTrain;
+    }
+
+    Train(final double MaxLoadOnTrain,
+          final String name,
+          final int speedOfTrain, final int id,
+          final double maxSpeed,
           final String colour) {
         super(id, maxSpeed, colour);
         this.maxLoadOnTrain = MaxLoadOnTrain;
@@ -30,4 +42,3 @@ public class Train extends Transport {
         return speedOfTrain;
     }
 }
-

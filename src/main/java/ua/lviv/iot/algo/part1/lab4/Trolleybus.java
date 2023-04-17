@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,43 +24,54 @@ public class Trolleybus extends Transport {
         return defaultTrolleybus;
     }
 
-    public double stop() {
+    public void stop() {
         if (currentSpeed < maxSpeedOfTrolleybus) {
-            return currentSpeed = 0;
+            currentSpeed = 0;
         } else {
             System.out.println("Error");
         }
-        return currentSpeed;
     }
 
-    public double start() {
-        return currentSpeed = 20;
+    public void start() {
+        currentSpeed = 20;
     }
+    public int f = 25;
+    public void addPassenger() {
 
-    public double addPassenger() {
-
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < f; i++) {
                 passengers++;
         }
-        for (int i = 0; i >= 25; i++) {
+        for (int i = 0; i >= f; i++) {
             System.out.println("  The trolley bus is crowded \n");
             break;
         }
-        return passengers;
     }
 
-    public double removePassenger() {
+    public void removePassenger() {
 
-        if (passengers >= 25) {
+        if (passengers >= f) {
             passengers--;
         }
-        return passengers;
     }
 
-    Trolleybus(final int id1,final int routeNumber, final int currentStop,
-               final double maxSpeedOfTrolleybus, final int passengers,
-               final int currentSpeed, final int id,
-               final double maxSpeed, final String colour) {
+
+    public String getHeaders() {
+        return super.getHeaders() + ",\t" + "id1" + ",\t" + "routeNumber" + ",\t"
+                + "currentStop" + ",\t" + "maxSpeedOfTrolleybus"
+                + ",\t" + "passengers" + ",\t" + "currentSpeed";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ",\t" + id1 + ",\t"
+                + routeNumber + ",\t" + currentSpeed + ",\t"
+                + maxSpeedOfTrolleybus + ",\t" + passengers
+                + ",\t" + currentSpeed;
+    }
+
+    public Trolleybus(final int id1, final int routeNumber, final int currentStop,
+                      final double maxSpeedOfTrolleybus, final int passengers,
+                      final int currentSpeed, final int id,
+                      final double maxSpeed, final String colour) {
         super(id, maxSpeed, colour);
         this.id1 = id1;
         this.routeNumber = routeNumber;
@@ -72,7 +83,7 @@ public class Trolleybus extends Transport {
 
 
     @Override
-    int accelerate(final int speed) {
+    public int accelerate(final int speed) {
         return currentSpeed;
     }
 }
