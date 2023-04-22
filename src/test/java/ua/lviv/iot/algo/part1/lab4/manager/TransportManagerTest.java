@@ -1,6 +1,11 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4.manager;
 
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab4.manager.TransportManager;
+import ua.lviv.iot.algo.part1.lab4.model.Car;
+import ua.lviv.iot.algo.part1.lab4.model.Plane;
+import ua.lviv.iot.algo.part1.lab4.model.Train;
+import ua.lviv.iot.algo.part1.lab4.model.Trolleybus;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,7 +51,7 @@ class TransportManagerTest {
         TransportManager transportManager = new TransportManager();
         transportManager.addTransport(new Car());
         transportManager.addTransport(new Train());
-        transportManager.addTransport(new Trolleybus(1,2,2,2,2,9));
+        transportManager.addTransport(new Trolleybus(1,2,2,2,2, 7));
 
         assertEquals(3, transportManager.getTransports().size());
     }
