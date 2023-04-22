@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,7 +31,7 @@ public class Plane extends Transport {
                 + ",\t" + speedOfPlane;
     }
 
-    Plane(final int numberOfPassengers,
+    public Plane(final int numberOfPassengers,
           final double maxHeightOfFlight,
           final int speedOfPlane,
           final int id, final double maxSpeed,

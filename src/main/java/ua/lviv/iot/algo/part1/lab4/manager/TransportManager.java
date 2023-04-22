@@ -1,8 +1,9 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.manager;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import ua.lviv.iot.algo.part1.lab4.model.Transport;
 
 import java.util.LinkedList;
 import java.util.List;

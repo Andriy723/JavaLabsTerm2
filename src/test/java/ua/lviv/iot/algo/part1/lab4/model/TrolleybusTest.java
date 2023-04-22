@@ -1,6 +1,7 @@
-package ua.lviv.iot.algo.part1.lab3;
+package ua.lviv.iot.algo.part1.lab4.model;
 
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab4.model.Trolleybus;
 
 import static org.junit.jupiter.api.Assertions.*;
 

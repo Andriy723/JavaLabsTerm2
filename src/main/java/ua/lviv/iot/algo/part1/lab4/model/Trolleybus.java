@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,13 +35,12 @@ public class Trolleybus extends Transport {
     public void start() {
         currentSpeed = 20;
     }
-    public int f = 25;
-    public void addPassenger() {
+    public void addPassenger(){
 
-        for (int i = 0; i < f; i++) {
+        for (int i = 0; i < 25; i++) {
                 passengers++;
         }
-        for (int i = 0; i >= f; i++) {
+        for (int i = 0; i >= 25; i++) {
             System.out.println("  The trolley bus is crowded \n");
             break;
         }
@@ -49,7 +48,7 @@ public class Trolleybus extends Transport {
 
     public void removePassenger() {
 
-        if (passengers >= f) {
+        if (passengers >= 25) {
             passengers--;
         }
     }

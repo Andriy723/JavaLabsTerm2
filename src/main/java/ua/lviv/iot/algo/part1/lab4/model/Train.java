@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab4;
+package ua.lviv.iot.algo.part1.lab4.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,11 +26,11 @@ public class Train extends Transport {
                 + ",\t" + name + ",\t" + speedOfTrain;
     }
 
-    Train(final double MaxLoadOnTrain,
-          final String name,
-          final int speedOfTrain, final int id,
-          final double maxSpeed,
-          final String colour) {
+    public Train(final double MaxLoadOnTrain,
+                 final String name,
+                 final int speedOfTrain, final int id,
+                 final double maxSpeed,
+                 final String colour) {
         super(id, maxSpeed, colour);
         this.maxLoadOnTrain = MaxLoadOnTrain;
         this.name = name;
